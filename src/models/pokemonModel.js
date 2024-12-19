@@ -7,8 +7,6 @@ require('dotenv').config();
 const Groq = require('groq-sdk');
 const groq = new Groq({apiKey: process.env.GROQ_API_KEY});
 
-console.log('Using API Key:', process.env.GROQ_API_KEY);
-
 module.exports = pokemonModel;
 
 pokemonModel.fetchPokemon = async (username, month, color) => {
