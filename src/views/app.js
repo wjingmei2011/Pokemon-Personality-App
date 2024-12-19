@@ -78,7 +78,7 @@ return (
                 type="text"
                 value={username} 
                 onChange={(e)=> setUsername(e.target.value)}
-                placeholder='Enter your name here'
+                placeholder='Enter your full name here'
                 aria-label="Name"
             />
 
@@ -123,7 +123,7 @@ return (
         <>
         <img src={pokemonMatch.image} alt='Character Image' />
         <h2> {toUpperCase(pokemonMatch.name)} </h2>
-        <h3>Pokeon Type: {toUpperCase(pokemonMatch.type)}</h3>
+        <h3>Pokemon Type: {toUpperCase(pokemonMatch.type)}</h3>
         <h3>Secret Power: {pokemonMatch.abilities.map(toUpperCase).join(', ')}</h3>
         <h4>{pokemonMatch.description}</h4>
         </>)
