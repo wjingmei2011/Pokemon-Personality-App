@@ -11,6 +11,7 @@ export default function App () {
  const [allMatches, setAllMatches] = useState([]) ;
  const [isVisible, setIsVisible] = useState(false);
 
+const BACKEND_URL=process.env.BACKEND_URL || 'http://localhost:3000';
 
 // define the event handler
 const pokemonMatchHandler = async (e) => {
@@ -21,7 +22,7 @@ const pokemonMatchHandler = async (e) => {
         return;
     }
 
-    fetch ('/pokemon/getPokemon',{
+    fetch (`${BACKEND_URL}/pokemon/getPokemon`,{
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({username, month, color})

@@ -48,7 +48,7 @@ module.exports = {
 
         {
           context: ['/pokemon'],
-          target: 'http://localhost:3000',
+          target: process.env.BACKEND_URL || 'http://localhost:3000',
           changeOrigin: true,
           secure: false
         }
