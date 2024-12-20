@@ -11,7 +11,8 @@ export default function App () {
  const [allMatches, setAllMatches] = useState([]) ;
  const [isVisible, setIsVisible] = useState(false);
 
-const BACKEND_URL=process.env.BACKEND_URL || 'http://localhost:3000';
+// const BACKEND_URL=process.env.BACKEND_URL || 'http://localhost:3000';
+const BACKEND_URL='http://localhost:3000';
 
 // define the event handler
 const pokemonMatchHandler = async (e) => {

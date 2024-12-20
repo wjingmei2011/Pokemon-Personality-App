@@ -9,15 +9,21 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 
-//define the routes middleware
+// Middleware
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../dist')));
-app.use(express.static(path.join(__dirname, 'views/public'))); 
-
 app.use(morgan('dev'));
 
-app.use('/pokemon', pokemonRoutes);    
+// Serve static files
+app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, 'views/public')));
 
+// Define API routes
+app.use('/pokemon', pokemonRoutes);
+
+// Serve index.html for frontend routes (SPA fallback)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 
 //error handling
 app.use((err, req, res, next)=>{
