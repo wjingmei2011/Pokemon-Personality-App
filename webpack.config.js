@@ -1,5 +1,8 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const dotenv = require('dotenv');
+dotenv.config();
+
 
 module.exports = {
   entry: './src/views/index.js',
@@ -48,11 +51,11 @@ module.exports = {
 
         {
           context: ['/pokemon'],
-          target: process.env.BACKEND_URL || 'http://localhost:3000',
+          target: 'http://localhost:3000',
           changeOrigin: true,
           secure: false
         }
       ]
   },
-  mode: 'development'
+  mode: process.env.NODE_ENV || 'development'
 };
