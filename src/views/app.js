@@ -149,7 +149,8 @@ return (
                             <h3><strong>{match.user_name}</strong></h3>
                             <h3>Pokemon: {toUpperCase(match.pokemon_name)}</h3>
                             <h3>Type: {toUpperCase(match.type)}</h3>
-                            <h3>Abilities: {match.abilities.map(toUpperCase).join(', ')}</h3>             
+                            <h3>Abilities: {match.abilities.map(toUpperCase).join(', ')}</h3>
+                            <h3>Favorite Color: {toUpperCase(match.color)}</h3>              
                             </div>
                         )
                         }
